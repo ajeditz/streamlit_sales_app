@@ -8,11 +8,12 @@ headers = {
 
 
 
-def start_bot(prompt:str, voice_id:str):
+def start_bot(prompt:str, voice_id:str,roleplay_type):
     data = {
         "prompt": prompt,
         "voice_id": voice_id,
-        "session_time": 10
+        "session_time": 10,
+        "difficulty_type":roleplay_type
     }
 
     response = requests.post(url, headers=headers, json=data)
