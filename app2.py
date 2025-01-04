@@ -70,7 +70,7 @@ st.sidebar.write("""
 st.markdown("<h1 style='text-align: center;'>EasyCloser</h1>", unsafe_allow_html=True)
 
 # Prompt selection
-selected_prompt = st.selectbox("Select Scenario", list(prompt_dic.keys()))
+selected_prompt = st.text_input("Enter Prompt")
 
 # Voice ID selection
 selected_voice_id = st.selectbox("Select Avatar", list(voice_map_el.keys()))
