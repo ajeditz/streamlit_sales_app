@@ -84,7 +84,7 @@ roleplay_type=st.selectbox("Select Roleplay Type",["customer","sales"])
 if st.button("Start Call"):
     with st.spinner("Starting call..."):
         # API request payload
-        prompt = prompt_dic[selected_prompt]
+        prompt = selected_prompt
         voice_id=voice_map_el[selected_voice_id]
         response = start_bot(prompt,voice_id,roleplay_type)
         room_url = response['room_url']
