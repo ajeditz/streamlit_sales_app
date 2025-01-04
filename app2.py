@@ -78,6 +78,7 @@ selected_voice_id = st.selectbox("Select Avatar", list(voice_map_el.keys()))
 # Additional customization options
 emotion = st.selectbox("Select Emotion", ["Neutral", "Happy", "Frustrated", "Curious"])
 difficulty_level = st.slider("Select Difficulty Level", 1, 5, 3)
+roleplay_type=st.selectbox("Select Roleplay Type",["customer","sales"])
 
 # Start Call button with spinner and room URL as "Join Now" button
 if st.button("Start Call"):
@@ -85,7 +86,7 @@ if st.button("Start Call"):
         # API request payload
         prompt = prompt_dic[selected_prompt]
         voice_id=voice_map_el[selected_voice_id]
-        response = start_bot(prompt,voice_id)
+        response = start_bot(prompt,voice_id,roleplay_type)
         room_url = response['room_url']
         room_id=response['room_id']
         
